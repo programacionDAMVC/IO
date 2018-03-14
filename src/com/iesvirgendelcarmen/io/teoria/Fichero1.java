@@ -1,5 +1,4 @@
 package com.iesvirgendelcarmen.io.teoria;
-
 import java.io.File;
 import java.util.Arrays;
 

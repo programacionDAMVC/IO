@@ -1,4 +1,5 @@
 package com.iesvirgendelcarmen.io.teoria;
+//leyendo un fichero de texto con los reader
 
 import java.io.BufferedReader;
 import java.io.File;
