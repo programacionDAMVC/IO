@@ -14,14 +14,24 @@ public class Ejercicio3 {
 		Path source = Paths.get("ficheros/ejercicios/libro.txt");
 		try (Scanner in = new Scanner(source);) 
 		{
+			Scanner scLineas = null;
 			int contadorLineas = 0;
+			int contadorPalabras = 0;
 			while (in.hasNextLine()) {
-				System.out.println(in.nextLine().
-						replaceAll("[,;\\.\\-—:!¿¡?…»\\d]", ""));
+				String linea = in.nextLine().
+						replaceAll("[\\(\\),;\\.\\-—–:!¿¡?…»\\d]", "");
+				 scLineas = new Scanner(linea);
+				 while (scLineas.hasNext()) {
+					 System.out.println(scLineas.next());
+					 contadorPalabras++;
+				 }
+				 scLineas.close();
 				//in.nextLine();
 				contadorLineas++;
 			}
-			System.out.println(contadorLineas);
+			System.out.println("Líneas: " + contadorLineas);			
+			System.out.println("Palabras: " + contadorPalabras);
+
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
