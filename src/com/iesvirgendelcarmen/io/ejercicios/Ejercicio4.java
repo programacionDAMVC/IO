@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ejercicio4 {
-	
+
 	public static void main(String[] args) {
 		List<Persona> listaPersonas = new ArrayList<>();
 		Persona persona1 = new Persona("juanito", "garcía garcía",
@@ -59,8 +59,8 @@ public class Ejercicio4 {
 
 		//leemos esos datos desde el fichero:
 		try (ObjectInputStream in = new ObjectInputStream(
-					new BufferedInputStream(new FileInputStream(
-							outFile)));)
+				new BufferedInputStream(new FileInputStream(
+						outFile)));)
 		{
 			/*Object persona1Leida = in.readObject();
 			System.out.println(persona1Leida);
@@ -72,7 +72,8 @@ public class Ejercicio4 {
 			System.out.println(persona4Leida);
 			Persona persona5Leida = (Persona) in.readObject();
 			System.out.println(persona5Leida);*/
-			List<Persona> listaPersonasLeidas = (List<Persona>) in.readObject();
+			List<Persona> listaPersonasLeidas = 
+					(List<Persona>) in.readObject();
 			//System.out.println(listaPersonasLeidas);
 			for (Persona persona : listaPersonasLeidas) {
 				System.out.println(persona.getNombre());
@@ -84,7 +85,7 @@ public class Ejercicio4 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }
